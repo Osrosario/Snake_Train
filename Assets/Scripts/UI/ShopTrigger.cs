@@ -11,10 +11,23 @@ public class ShopTrigger : MonoBehaviour
     [SerializeField] private GameObject shopScreen;
     [SerializeField] private GameObject shopPrompt;
     [SerializeField] public bool on;
+    private int sceneState;
+
+    private void OnEnable()
+    {
+        CombatStateManager.SendSceneState += SceneState;
+
+    }
+
+    private void OnDisable()
+    {
+        CombatStateManager.SendSceneState -= SceneState;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        on = false;
 
     }
 
@@ -27,21 +40,29 @@ public class ShopTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(on == true && Input.GetKeyDown(KeyCode.F))
         {
             shopScreen.SetActive(true);
+            shopScreen.GetComponent<ShopController>().restoreState = sceneState;
             shopScreen.GetComponent<ShopController>().UpdateMenu();
             on = false;
+           
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        Debug.Log(sceneState);
+        if(sceneState == 0 || sceneState == 1)
         {
-            on = true;
-            shopPrompt.SetActive(true);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                on = true;
+                shopPrompt.SetActive(true);
+            }
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -51,5 +72,10 @@ public class ShopTrigger : MonoBehaviour
             on = false;
             shopPrompt.SetActive(false);
         }
+    }
+
+    private void SceneState(int state)
+    {
+        sceneState = state;
     }
 }

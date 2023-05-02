@@ -16,6 +16,9 @@ public class ShopController : MonoBehaviour
     public PlayerStats stats;
 
     [SerializeField] ShopTrigger trig;
+    [SerializeField] private GameObject crossFade;
+    public int restoreState;
+    
 
     private void Start()
     {
@@ -28,7 +31,10 @@ public class ShopController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            
+            
             BackToCar();
+
         }
     }
 
@@ -52,6 +58,15 @@ public class ShopController : MonoBehaviour
     //closes the shop menu
     public void BackToCar()
     {
+        crossFade.SetActive(true);
+        if (restoreState == 0)
+        {
+            CombatStateManager.current.SetState(CombatStateManager.SceneState.Friendly);
+        }
+        else
+        {
+            CombatStateManager.current.SetState(CombatStateManager.SceneState.Neutral);
+        }
         Debug.Log("shop exit");
         gameObject.SetActive(false);
         trig.on = true;
@@ -62,7 +77,9 @@ public class ShopController : MonoBehaviour
     {
         
         Debug.Log(inv.Coins);
-        
+        crossFade.SetActive(false);
+        CombatStateManager.current.SetState(CombatStateManager.SceneState.Menu);
+
         //update shop option availability
         if (inv.Coins < 15 || stats.health>=100)//Not sure how to access max health, but that's the second check
         {

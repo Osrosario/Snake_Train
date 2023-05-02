@@ -45,6 +45,8 @@ public class BulletController : MonoBehaviour
     /* Disables object depending on what it collides with. */
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        
+        
         switch (collision.gameObject.tag)
         {
             case "Player":
@@ -56,6 +58,10 @@ public class BulletController : MonoBehaviour
                 Disable();
                 break;
             case "Obstacle":
+                Disable();
+                break;
+            case "Breakable":
+                collision.gameObject.GetComponent<EnemyStats>().TakeDamage(_bulletDamage);
                 Disable();
                 break;
         }

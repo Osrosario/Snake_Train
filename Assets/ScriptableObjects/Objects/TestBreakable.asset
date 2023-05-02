@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507176ded19f4054eb5586d43656e40d, type: 3}
   m_Name: TestBreakable
   m_EditorClassIdentifier: 
-  MaxHealth: 0
+  MaxHealth: 1
   Attack: 0
   MoveSpeed: 0
   DashForce: 0

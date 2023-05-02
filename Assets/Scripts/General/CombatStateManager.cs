@@ -20,7 +20,8 @@ public class CombatStateManager : MonoBehaviour
         Friendly,
         Neutral,
         Hostile,
-        Transition
+        Transition,
+        Menu
     }
 
     /*
@@ -78,6 +79,10 @@ public class CombatStateManager : MonoBehaviour
             case SceneState.Transition:
 
                 SendSceneState?.Invoke(3);
+                break;
+
+            case SceneState.Menu:
+                SendSceneState?.Invoke(4);
                 break;
         }
     }
