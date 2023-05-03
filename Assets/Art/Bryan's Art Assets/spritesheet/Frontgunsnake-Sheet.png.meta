@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b6a908a69356bfa4ca07059771644803
+guid: 018a2b1c969d3ab4aa96a0cc2c4f9e2e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,194 +101,185 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shootcobraidle-Sheet_0
+      name: Frontgunsnake-Sheet_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 14
-        width: 36
-        height: 44
+        x: 140
+        y: 15
+        width: 41
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 848fad354d169f447b4d6bb881f57930
-      internalID: -384948185
+      spriteID: c260845ae829836469a412a1f0b6af3b
+      internalID: -58204957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shootcobraidle-Sheet_1
+      name: Frontgunsnake-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 14
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35639c042a6765141bb62530d9e5fd05
+      internalID: 1335076413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frontgunsnake-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 14
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0af7bc348a8ff4aac67679a7a19e28
+      internalID: -1057042072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frontgunsnake-Sheet_5
       rect:
         serializedVersion: 2
         x: 82
-        y: 13
-        width: 36
-        height: 49
+        y: 15
+        width: 32
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4bd532c274c8124a9e40d3aa6654e9e
-      internalID: -1358231091
+      spriteID: 41f9fb75122fb334aaa1c99da064bb03
+      internalID: -1173583931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shootcobraidle-Sheet_2
+      name: Frontgunsnake-Sheet_6
       rect:
         serializedVersion: 2
-        x: 146
-        y: 13
-        width: 36
-        height: 51
+        x: 206
+        y: 15
+        width: 39
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1c316e1382bd204d997676971b22185
-      internalID: -1496670569
+      spriteID: 88bf1970a269e9b44b1ea4b4b1e8f12d
+      internalID: -1592502643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shootcobraidle-Sheet_3
+      name: Frontgunsnake-Sheet_8
       rect:
         serializedVersion: 2
-        x: 210
-        y: 13
-        width: 36
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99c5d70f099dcba42b663a336b937b3f
-      internalID: -1320589903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shootcobraidle-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 13
-        width: 36
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f220e6082665b4c478535c2ec5a701e9
-      internalID: -1549754018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shootcobraidle-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 12
+        x: 272
+        y: 15
         width: 37
-        height: 47
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf7f693a4fa70e743a1e0e2d92449d6e
-      internalID: 1436276374
+      spriteID: c0e8d7211aaed4145b5d91c56161328a
+      internalID: -1671775446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shootcobraidle-Sheet_6
+      name: Frontgunsnake-Sheet_9
       rect:
         serializedVersion: 2
-        x: 402
-        y: 12
-        width: 36
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4db8be1bc08c0a744b0e2ed8783d34f6
-      internalID: -125905557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shootcobraidle-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 467
-        y: 13
+        x: 335
+        y: 15
         width: 35
-        height: 51
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4695b7518b0da6544bfff68ed7d634ad
-      internalID: 142499861
+      spriteID: f24ca3eb5bec95140b1ef081ce4c7e84
+      internalID: -666237958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shootcobraidle-Sheet_8
+      name: Frontgunsnake-Sheet_10
       rect:
         serializedVersion: 2
-        x: 530
-        y: 12
-        width: 36
-        height: 47
+        x: 399
+        y: 14
+        width: 29
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6811861b6b68a04eae7a79a2d021d72
-      internalID: -1167669860
+      spriteID: 7da76bd4e0a7b4c47b129d4c326f528d
+      internalID: -93874115
       vertices: []
       indices: 
       edges: []
@@ -304,15 +295,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      shootcobraidle-Sheet_0: -384948185
-      shootcobraidle-Sheet_1: -1358231091
-      shootcobraidle-Sheet_2: -1496670569
-      shootcobraidle-Sheet_3: -1320589903
-      shootcobraidle-Sheet_4: -1549754018
-      shootcobraidle-Sheet_5: 1436276374
-      shootcobraidle-Sheet_6: -125905557
-      shootcobraidle-Sheet_7: 142499861
-      shootcobraidle-Sheet_8: -1167669860
+      Frontgunsnake-Sheet_0: -58204957
+      Frontgunsnake-Sheet_1: 506335205
+      Frontgunsnake-Sheet_10: -93874115
+      Frontgunsnake-Sheet_2: 1660150254
+      Frontgunsnake-Sheet_3: 1335076413
+      Frontgunsnake-Sheet_4: -1057042072
+      Frontgunsnake-Sheet_5: -1173583931
+      Frontgunsnake-Sheet_6: -1592502643
+      Frontgunsnake-Sheet_7: -137960517
+      Frontgunsnake-Sheet_8: -1671775446
+      Frontgunsnake-Sheet_9: -666237958
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

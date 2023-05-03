@@ -307,7 +307,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1581071785, guid: 57212f20f34db1343ae0608044414d68, type: 3}
+  m_Sprite: {fileID: 1262964939, guid: 55aeb4ce0165a9449aa6d893325813b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 3028125974566894399}
   - component: {fileID: 6974072122836168163}
   m_Layer: 0
-  m_Name: BreakableBox
+  m_Name: BreakableBarrel
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -760,7 +760,7 @@ Transform:
   m_GameObject: {fileID: 3678258946148815130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3678258944213170869}
@@ -817,7 +817,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009431899, y: -0.10375035}
+  m_Offset: {x: 0.002666831, y: -0.0755198}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -828,7 +828,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0188637, y: 0.7924993}
+  m_Size: {x: 0.82528305, y: 0.7360382}
   m_EdgeRadius: 0
 --- !u!114 &6974072122836168163
 MonoBehaviour:

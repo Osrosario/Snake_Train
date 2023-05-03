@@ -61,7 +61,8 @@ public class BulletController : MonoBehaviour
                 Disable();
                 break;
             case "Breakable":
-                collision.gameObject.GetComponent<EnemyStats>().TakeDamage(_bulletDamage);
+                //collision.gameObject.GetComponent<EnemyStats>().TakeDamage(_bulletDamage);
+                collision.gameObject.GetComponent<BreakableScript>().Hit(_bulletDamage);
                 Disable();
                 break;
         }
