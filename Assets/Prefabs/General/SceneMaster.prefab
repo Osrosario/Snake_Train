@@ -175,7 +175,7 @@ MonoBehaviour:
   nextSceneIndex: 2
   playerSpeed: 1
   doorSpeed: 1
-  exitDirection: 0
+  exitDirection: 1
 --- !u!1 &5439620104040673233
 GameObject:
   m_ObjectHideFlags: 0
