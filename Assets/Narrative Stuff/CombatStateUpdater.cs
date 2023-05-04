@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CombatStateUpdater : MonoBehaviour
 {
@@ -16,5 +17,9 @@ public class CombatStateUpdater : MonoBehaviour
     private void StateActiveSet()
     {
         CombatStateManager.current.SetState(CombatStateManager.SceneState.Hostile);
+    }
+    public void GoToLoad()
+    {
+        SceneManager.LoadSceneAsync(1);
     }
 }

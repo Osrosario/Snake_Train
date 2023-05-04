@@ -601,7 +601,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!224 &1490888623
 RectTransform:
@@ -920,8 +920,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneData: {fileID: 11400000, guid: fc7a2dbf7c11eec47944be54eb06f4ff, type: 2}
-  loadingBar: {fileID: 1580784936}
-  progressLabel: {fileID: 1236506389}
 --- !u!1 &2059814834
 GameObject:
   m_ObjectHideFlags: 0
