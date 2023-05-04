@@ -65,6 +65,9 @@ public class BulletController : MonoBehaviour
                 collision.gameObject.GetComponent<BreakableScript>().Hit(_bulletDamage);
                 Disable();
                 break;
+            case "Environment":
+                Disable();
+                break;
         }
     }
 

@@ -75,4 +75,21 @@ public class PlayerStats : MonoBehaviour, IDamageable
         floatingTextObj.transform.rotation = Quaternion.identity;
         floatingTextObj.SetActive(true);
     }
+
+    //increases the player's max health
+    public void IncreaseMaxHealth(int increase)
+    {
+        playerData.MaxHealth += increase;
+        Heal(increase);
+    }
+
+    public bool CheckHealthPercentage()
+    {
+        bool full = false;
+        if(health == playerData.MaxHealth)
+        {
+            full = true;
+        }
+        return full;
+    }
 }

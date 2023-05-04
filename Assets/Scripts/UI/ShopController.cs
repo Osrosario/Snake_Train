@@ -43,9 +43,10 @@ public class ShopController : MonoBehaviour
     public void RestoreHealth()
     {
         //for now, fully healing based on current max health
-        stats.Heal(100);
+        stats.Heal(200);
         //inv.Coins -= 15;
         inv.SubtractCoins(15);
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().Heal(200);
         UpdateMenu();
     }
 
@@ -54,6 +55,7 @@ public class ShopController : MonoBehaviour
     {
         //inv.Coins -= 30;
         inv.SubtractCoins(30);
+        stats.IncreaseMaxHealth(25);
         UpdateMenu();
     }
 
@@ -84,17 +86,27 @@ public class ShopController : MonoBehaviour
         CombatStateManager.current.SetState(CombatStateManager.SceneState.Menu);
 
         //update shop option availability
-        if (inv.ReturnCoins() < 15 || stats.health>=100)//Not sure how to access max health, but that's the second check
+        if (inv.ReturnCoins() < 15 || stats.CheckHealthPercentage() ==  true)//Not sure how to access max health, but that's the second check
         {
-            increaseButton.interactable = false;
-            increaseButton.GetComponent<Image>().color = Color.grey;
+            restoreButton.interactable = false;
+            restoreButton.GetComponent<Image>().color = Color.grey;
 
+        }
+        else
+        {
+            restoreButton.interactable = true;
+            restoreButton.GetComponent<Image>().color = Color.white;
         }
 
         if (inv.ReturnCoins() < 30)// ADD OR FROM PLAYER MAXHEALTH == CAP
         {
             increaseButton.interactable = false;
             increaseButton.GetComponent<Image>().color = Color.grey;
+        }
+        else
+        {
+            increaseButton.interactable = true;
+            increaseButton.GetComponent<Image>().color = Color.white;
         }
 
         //update information displayed
