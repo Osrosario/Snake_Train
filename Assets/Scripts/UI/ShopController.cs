@@ -44,14 +44,16 @@ public class ShopController : MonoBehaviour
     {
         //for now, fully healing based on current max health
         stats.Heal(100);
-        inv.Coins -= 15;
+        //inv.Coins -= 15;
+        inv.SubtractCoins(15);
         UpdateMenu();
     }
 
     //increases the player's max health
     public void IncreaseMaxHealth()
     {
-        inv.Coins -= 30;
+        //inv.Coins -= 30;
+        inv.SubtractCoins(30);
         UpdateMenu();
     }
 
@@ -75,27 +77,28 @@ public class ShopController : MonoBehaviour
     //updates the shop menu
     public void UpdateMenu()
     {
-        
-        Debug.Log(inv.Coins);
+
+        //Debug.Log(inv.Coins);
+        Debug.Log(inv.ReturnCoins());
         crossFade.SetActive(false);
         CombatStateManager.current.SetState(CombatStateManager.SceneState.Menu);
 
         //update shop option availability
-        if (inv.Coins < 15 || stats.health>=100)//Not sure how to access max health, but that's the second check
+        if (inv.ReturnCoins() < 15 || stats.health>=100)//Not sure how to access max health, but that's the second check
         {
             increaseButton.interactable = false;
             increaseButton.GetComponent<Image>().color = Color.grey;
 
         }
 
-        if (inv.Coins < 30)// ADD OR FROM PLAYER MAXHEALTH == CAP
+        if (inv.ReturnCoins() < 30)// ADD OR FROM PLAYER MAXHEALTH == CAP
         {
             increaseButton.interactable = false;
             increaseButton.GetComponent<Image>().color = Color.grey;
         }
 
         //update information displayed
-        moneyDisplay.text = "Money: " + inv.Coins;
+        moneyDisplay.text = "Money: " + inv.ReturnCoins();
 
         //ADD UPDATE BASED ON PLAYER HEALTH
     }

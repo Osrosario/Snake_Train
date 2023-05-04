@@ -9,16 +9,48 @@ public class PlayerInventory : MonoBehaviour
      * It also holds the gold prefabs, for the moment.
      */
     [SerializeField] private ItemData coinData;
-    
+    //[SerializeField] private int coinData;
+    //public int coinCount;
+
     void Start()
     {
         coinData.Quantity = 0;
+        //coinCount = 0;
+        //coinData = 0;
     }
 
     /* Getter/Setter */
+    /**
     public int Coins
     {
-        get { return coinData.Quantity; }
-        set { coinData.Quantity += value; }
+       
+        
+        get {
+            Debug.Log("get coins!");
+            return coinData.Quantity; }
+        set {
+            Debug.Log("set coins!");
+            coinData.Quantity += value; }
+        get {
+            Debug.Log("get coins!");
+            return coinData; }
+        set {
+            Debug.log("set coins!");
+            coinData += value; }
+}**/
+
+    public void AddCoin()
+    {
+        coinData.Quantity += 1;
+    }
+
+    public void SubtractCoins(int remove)
+    {
+        coinData.Quantity -= remove;
+    }
+
+    public int ReturnCoins()
+    {
+        return coinData.Quantity;
     }
 }

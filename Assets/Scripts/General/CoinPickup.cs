@@ -10,10 +10,12 @@ public class CoinPickup : MonoBehaviour
      */
 
     private GameObject Player;
+    private bool trig;
 
     private void Start()
     {
         Player = null;
+        trig = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,9 +23,16 @@ public class CoinPickup : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("coin contact");
-            Player = other.gameObject;
-            //other.gameObject.GetComponent<PlayerInventory>().Coins+=1;
-            Destroy(gameObject);
+            gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
+            if (trig == false)
+            {
+                trig = true;
+                Player = other.gameObject;
+                //other.gameObject.GetComponent<PlayerInventory>().Coins+=1;
+                other.gameObject.GetComponent<PlayerInventory>().AddCoin();
+                Destroy(gameObject);
+            }
+
         }
     }
 
@@ -31,7 +40,7 @@ public class CoinPickup : MonoBehaviour
     {
         if(Player != null)
         {
-            Player.GetComponent<PlayerInventory>().Coins += 1;
+            //Player.GetComponent<PlayerInventory>().Coins += 1;
         }
        
     }
