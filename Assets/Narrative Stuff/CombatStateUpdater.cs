@@ -20,6 +20,10 @@ public class CombatStateUpdater : MonoBehaviour
     }
     public void GoToLoad()
     {
+        Invoke("LoadScene", 2f);
+    }
+    private void LoadScene()
+    {
         SceneManager.LoadSceneAsync(1);
     }
 }
