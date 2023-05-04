@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Interactable
   - Breakable
+  - Environment
   layers:
   - Default
   - TransparentFX
@@ -44,9 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Pickups
+  - name: Background
     uniqueID: 1442776889
     locked: 0
-  - name: Background
+  - name: Pickups
     uniqueID: 3403714855
     locked: 0
