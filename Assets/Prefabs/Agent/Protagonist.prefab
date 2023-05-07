@@ -68,12 +68,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4770749177609746718, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770749177609746718, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4770749177609746718, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 238183553
+      objectReference: {fileID: 0}
     - target: {fileID: 4770749177685651562, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
       propertyPath: m_Name
-      value: Player2
+      value: Protagonist
       objectReference: {fileID: 0}
     - target: {fileID: 4770749177685651563, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
       propertyPath: sceneCamera
@@ -172,8 +180,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4770749177729167823, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770749177729167823, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770749177729167823, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 238183553
       objectReference: {fileID: 0}
     - target: {fileID: 4770749177879987386, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
       propertyPath: m_LocalScale.x
@@ -236,8 +252,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4770749177879987387, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770749177879987387, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770749177879987387, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 238183553
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257643806278158484, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543573153
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849a1b8d598d81444b95841911fc3c55, type: 3}
