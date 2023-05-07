@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e77dc27a4714ef045a24d8b473d0fefb
+guid: d60184dbff744fe43b43d3fca4b0c444
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,106 +117,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: abosstest-Sheet_0
+      name: bosstest-Sheenewt_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 20
-        width: 20
-        height: 32
+        x: 3
+        y: 0
+        width: 61
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97d54ff49807bea49825138cdf5160c9
-      internalID: 353939276
+      spriteID: d2048bf2966faf742a7ec22fee0e3393
+      internalID: -319639180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: abosstest-Sheet_2
+      name: bosstest-Sheenewt_1
       rect:
         serializedVersion: 2
-        x: 94
-        y: 18
-        width: 29
-        height: 36
+        x: 67
+        y: 0
+        width: 61
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59d7c8d95f47ba3428864f5b237f1edb
-      internalID: -1935057876
+      spriteID: 40eba1228eeff2c40a2094853933784d
+      internalID: -335838833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: abosstest-Sheet_4
+      name: bosstest-Sheenewt_2
       rect:
         serializedVersion: 2
-        x: 158
-        y: 17
-        width: 29
-        height: 32
+        x: 131
+        y: 0
+        width: 61
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b583485a9d2bdbd41af366f8704066df
-      internalID: 1236973668
+      spriteID: 59e77100537ab574d8d2c5a6366e9431
+      internalID: 188860518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: abosstest-Sheet_5
+      name: bosstest-Sheenewt_3
       rect:
         serializedVersion: 2
-        x: 226
-        y: 14
-        width: 20
-        height: 41
+        x: 195
+        y: 0
+        width: 61
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bff5f498110204f42ba00092e8f27489
-      internalID: -1988256486
+      spriteID: 7c63163d6cc39ea4ca9bbfba8e09e85e
+      internalID: -162624775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: abosstest-Sheet_7
+      name: bosstest-Sheenewt_4
       rect:
         serializedVersion: 2
-        x: 279
-        y: 21
-        width: 32
-        height: 32
+        x: 259
+        y: 0
+        width: 61
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce0c70c188d170b42ba5290b45c4a282
-      internalID: -749443574
+      spriteID: 0b14b0da5efb2ea468860e1607533d10
+      internalID: 1163778267
       vertices: []
       indices: 
       edges: []
@@ -232,14 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      abosstest-Sheet_0: 353939276
-      abosstest-Sheet_1: -1057286345
-      abosstest-Sheet_2: -1935057876
-      abosstest-Sheet_3: -39761151
-      abosstest-Sheet_4: 1236973668
-      abosstest-Sheet_5: -1988256486
-      abosstest-Sheet_6: 390218779
-      abosstest-Sheet_7: -749443574
+      bosstest-Sheenewt_0: -319639180
+      bosstest-Sheenewt_1: -335838833
+      bosstest-Sheenewt_2: 188860518
+      bosstest-Sheenewt_3: -162624775
+      bosstest-Sheenewt_4: 1163778267
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

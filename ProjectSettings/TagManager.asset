@@ -48,6 +48,12 @@ TagManager:
   - name: Background
     uniqueID: 1442776889
     locked: 0
+  - name: Middle
+    uniqueID: 238183553
+    locked: 0
   - name: Pickups
     uniqueID: 3403714855
+    locked: 0
+  - name: UI
+    uniqueID: 2751394143
     locked: 0
