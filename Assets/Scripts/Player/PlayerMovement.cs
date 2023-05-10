@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true;
     private bool isDashing;
     private float dashingTime = 0.2f;
+    private AudioSource dashSound;
 
     /* Finds the child with the specified name of the object this script is attached to. */
     private void Awake()
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         playerRigidBody = gameObject.GetComponent<Rigidbody2D>();
         playerSpriteTransform = transform.Find("SpritePlayer").GetComponent<Transform>();
         weaponTransform = transform.Find("Revolver (Pivot)").GetComponent<Transform>();
+        dashSound = gameObject.GetComponent<AudioSource>();
     }
 
     /*
@@ -164,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        dashSound.Play();
         playerStats.IsDamageable = false;
         playerRigidBody.AddForce(direction.normalized * playerData.DashForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(dashingTime);
