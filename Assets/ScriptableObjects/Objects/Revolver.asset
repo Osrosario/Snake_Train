@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4638bddc64d8df41a31dcc91806106b, type: 3}
   m_Name: Revolver
   m_EditorClassIdentifier: 
-  MaxDamage: 100
-  MinDamage: 100
+  SFX: {fileID: 8300000, guid: 4ee8c6b2ac8c9304d9d32c11a92cd6f6, type: 3}
+  MaxDamage: 20
+  MinDamage: 15
   FireForce: 20
   FireRate: 0.7
   Capacity: 0

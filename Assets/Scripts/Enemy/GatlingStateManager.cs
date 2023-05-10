@@ -7,17 +7,19 @@ public class GatlingStateManager : MonoBehaviour
     [SerializeField] private GunData gatlingData;
     [SerializeField] private Transform gatlingTransform;
     [SerializeField] private float detectionRadius;
+    [SerializeField] private float rotationSpeed;
 
     /* Agent Data */
     private Transform enemySpriteTransform;
     private float xEnemyScale;
     private float yGatlingScale;
-    private Transform playerTransform;
-    private Vector3 lastPlayerPosition;
+    private Transform targetTransform;
+    private Vector3 lastTargetPosition;
 
     /* Weapon Data */
     private Transform firePointTransform;
-    private Vector2 directionToPlayer;
+    private Vector2 directionToTarget;
+    private bool isPlayerInRange;
     private bool isPlayerDetected;
     private bool canFire = true;
     private float drumCapacity;
@@ -57,7 +59,7 @@ public class GatlingStateManager : MonoBehaviour
         enemySpriteTransform = transform.Find("SpriteEnemy").GetComponent<Transform>();
         xEnemyScale = enemySpriteTransform.localScale.x;
         yGatlingScale = gatlingTransform.localScale.y;
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        targetTransform = GameObject.Find("Player").GetComponent<Transform>();
         firePointTransform = transform.Find("Gatling (Pivot)/FirePoint").GetComponent<Transform>();
         drumCapacity = gatlingData.Capacity;
 
@@ -68,9 +70,10 @@ public class GatlingStateManager : MonoBehaviour
     /* Gatling Finite State Machine. Controlled by CombatStateManager. */
     private void Update()
     {
-        if (playerTransform != null)
+        if (targetTransform != null)
         {
-            directionToPlayer = (playerTransform.position - gatlingTransform.position).normalized;
+            directionToTarget = (targetTransform.position - gatlingTransform.position).normalized;
+            DrawRay();
             Scan();
             AimWeapon();
 
@@ -80,7 +83,7 @@ public class GatlingStateManager : MonoBehaviour
                 {
                     case GatlingState.Scanning:
 
-                        currentState = (isPlayerDetected) ? GatlingState.Firing : GatlingState.Scanning;
+                        currentState = (isPlayerInRange) ? GatlingState.Firing : GatlingState.Scanning;
                         break;
 
                     case GatlingState.Firing:
@@ -110,14 +113,14 @@ public class GatlingStateManager : MonoBehaviour
     /* Player Detection. */
     private void Scan()
     {
-        if (Vector2.Distance(playerTransform.position, gatlingTransform.position) < detectionRadius)
+        if (Vector2.Distance(targetTransform.position, gatlingTransform.position) < detectionRadius)
         {
-            isPlayerDetected = true;
-            lastPlayerPosition = playerTransform.position;
+            isPlayerInRange = true;
+            lastTargetPosition = targetTransform.position;
         }
         else
         {
-            isPlayerDetected = false;
+            isPlayerInRange = false;
         }
     }
 
@@ -125,15 +128,15 @@ public class GatlingStateManager : MonoBehaviour
     private void AimWeapon()
     {
         /* Calculates the angle between two points. */
-        float aimAngle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
+        float aimAngle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
 
         /* Sets the angle of this object to face the mouse position. */
-        gatlingTransform.rotation = Quaternion.Euler(gatlingTransform.rotation.x, gatlingTransform.rotation.y, aimAngle);
+        gatlingTransform.rotation = Quaternion.Lerp(gatlingTransform.rotation, Quaternion.Euler(0, 0, aimAngle), rotationSpeed * Time.deltaTime);
 
-        if (directionToPlayer.x < 0)
+        if (directionToTarget.x < 0)
         {
             enemySpriteTransform.localScale = new Vector3(-xEnemyScale, enemySpriteTransform.localScale.y, enemySpriteTransform.localScale.z);
-            gatlingTransform.localScale = new Vector3(gatlingTransform.localScale.x, -yGatlingScale , gatlingTransform.localScale.z);
+            gatlingTransform.localScale = new Vector3(gatlingTransform.localScale.x, -yGatlingScale, gatlingTransform.localScale.z);
         }
         else
         {
@@ -142,37 +145,46 @@ public class GatlingStateManager : MonoBehaviour
         }
     }
 
-    /* Gizmos for visibility */
+    /* Debug for visibility */
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(gatlingTransform.position, detectionRadius);
+    }
 
-        if (playerTransform != null)
+    private void DrawRay()
+    {
+        float adjustedRadius = detectionRadius - Vector2.Distance(firePointTransform.position, gatlingTransform.position);
+        RaycastHit2D hit = Physics2D.Raycast(firePointTransform.position, firePointTransform.right, adjustedRadius);
+
+        if (hit.collider != null)
         {
-            if (isPlayerDetected)
+            if (hit.collider.gameObject.GetComponent<IDamageable>() != null)
             {
-                Gizmos.color = Color.red;
-                Gizmos.DrawLine(firePointTransform.position, playerTransform.position);
+                isPlayerDetected = true;
+                Debug.DrawRay(firePointTransform.position, firePointTransform.right * hit.distance, Color.red);
             }
             else
             {
-                Gizmos.color = Color.green;
-                Gizmos.DrawLine(firePointTransform.position, directionToPlayer * detectionRadius);
+                isPlayerDetected = false;
+                Debug.DrawRay(firePointTransform.position, firePointTransform.right * hit.distance, Color.green);
             }
-            
+        }
+        else
+        {
+            Debug.DrawRay(firePointTransform.position, firePointTransform.right * adjustedRadius, Color.green);
         }
     }
 
     /* Getter/Setter */
-    private void PlayerDead()  
-    { 
-        isPlayerDetected = false; 
+    private void PlayerDead()
+    {
+        isPlayerInRange = false;
     }
 
-    private void SceneState(int state) 
-    { 
-        sceneState = state; 
+    private void SceneState(int state)
+    {
+        sceneState = state;
     }
 
     /* ---------------------- GATLING STATES ---------------------- */
@@ -183,23 +195,19 @@ public class GatlingStateManager : MonoBehaviour
      */
     private void Firing()
     {
-        if (!isPlayerDetected)
+        if (drumCapacity > 0)
         {
-            currentState = GatlingState.Throwing;
-        }
-        else if (drumCapacity > 0)
-        {
-            if (canFire)
+            if (canFire && isPlayerDetected)
             {
-                GameObject projectile = BulletPooler.current.GetPooledObject();
+                GameObject projectile = ObjectPooler.current.GetPooledObject<Bullet>();
 
                 if (projectile != null)
                 {
                     projectile.transform.position = firePointTransform.position;
                     projectile.transform.rotation = firePointTransform.rotation;
-                    projectile.GetComponent<BulletController>().FireForce = gatlingData.FireForce;
+                    projectile.GetComponent<Bullet>().FireForce = gatlingData.FireForce;
                     int randomDamage = Mathf.FloorToInt(Random.Range(gatlingData.MinDamage, gatlingData.MaxDamage));
-                    projectile.GetComponent<BulletController>().BulletDamage = randomDamage;
+                    projectile.GetComponent<Bullet>().BulletDamage = randomDamage;
                     projectile.SetActive(true);
                     drumCapacity--;
                     StartCoroutine(FireTimer());
@@ -212,10 +220,10 @@ public class GatlingStateManager : MonoBehaviour
         }
         else
         {
-            currentState = GatlingState.Inspecting;
+            currentState = GatlingState.Throwing;
         }
     }
-
+    
     /* Fire Rate Control. */
     private IEnumerator FireTimer()
     {
@@ -239,12 +247,12 @@ public class GatlingStateManager : MonoBehaviour
      */
     private void ThrowMolotov()
     {
-        GameObject throwable = MolotovPooler.current.GetPooledObject();
+        GameObject throwable = ObjectPooler.current.GetPooledObject<Molotov>();
 
         if (throwable != null)
         {
-            throwable.GetComponent<MolotovController>().StartPosition = transform.position;
-            throwable.GetComponent<MolotovController>().EndPosition = lastPlayerPosition;
+            throwable.GetComponent<Molotov>().StartPosition = transform.position;
+            throwable.GetComponent<Molotov>().EndPosition = lastTargetPosition;
             throwable.transform.rotation = Quaternion.identity;
             throwable.transform.localScale = gatlingTransform.localScale;
             throwable.SetActive(true);
@@ -255,5 +263,18 @@ public class GatlingStateManager : MonoBehaviour
         {
             return;
         }
+    }
+
+    /* Getter/Setter */
+    public bool IsPlayerDetected
+    {
+        get { return isPlayerInRange; }
+        set { isPlayerInRange = value; }
+    }
+
+    public Transform TargetTransform
+    {
+        get { return targetTransform; }
+        set { targetTransform = value; }
     }
 }

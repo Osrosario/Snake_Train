@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 8177730764515840754}
   - component: {fileID: 8177730764515840757}
   - component: {fileID: 8177730764515840752}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CrossFade (Canvas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 8177730765048295232}
   - component: {fileID: 8177730765048295235}
   - component: {fileID: 8177730765048295233}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ImageBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

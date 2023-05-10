@@ -413,6 +413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 0634d12fae24df5439c967448ffba946, type: 2}
+  coinObject: {fileID: 7307438559108704558, guid: fd3cfc53c56ad4c30968485851aedfec, type: 3}
+  amountToDrop: 4
 --- !u!1 &3008852616432645807
 GameObject:
   m_ObjectHideFlags: 0

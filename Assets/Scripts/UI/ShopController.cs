@@ -86,7 +86,7 @@ public class ShopController : MonoBehaviour
         CombatStateManager.current.SetState(CombatStateManager.SceneState.Menu);
 
         //update shop option availability
-        if (inv.ReturnCoins() < 15 || stats.CheckHealthPercentage() ==  true)//Not sure how to access max health, but that's the second check
+        if (inv.ReturnCoins() < 15 || stats.IsHealthFull() ==  true)//Not sure how to access max health, but that's the second check
         {
             restoreButton.interactable = false;
             restoreButton.GetComponent<Image>().color = Color.grey;
