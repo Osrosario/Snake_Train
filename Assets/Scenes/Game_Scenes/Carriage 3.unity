@@ -919,7 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfd6b20ec96223489fa87374b6defbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 938600024}
+  player: {fileID: 1022735467}
   cameraSpeed: 5
   minX: -1.5
   maxX: 3.95
@@ -1627,11 +1627,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &938600024 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3031126461984246481, guid: 70facf84a3fa06d46a12f3fb13669723, type: 3}
-  m_PrefabInstance: {fileID: 1060688076}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1022735466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1683,12 +1678,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6154855050440938988, guid: 29300f01b0afb514db12a914449215c7, type: 3}
+      propertyPath: sceneCamera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 6154855050440938989, guid: 29300f01b0afb514db12a914449215c7, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29300f01b0afb514db12a914449215c7, type: 3}
+--- !u!4 &1022735467 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6154855050440938985, guid: 29300f01b0afb514db12a914449215c7, type: 3}
+  m_PrefabInstance: {fileID: 1022735466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1060688076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4541,6 +4545,10 @@ PrefabInstance:
     - target: {fileID: 6386058716099886541, guid: 4d42364e028fad042a36ff6b09703268, type: 3}
       propertyPath: exitDirection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386058716099886541, guid: 4d42364e028fad042a36ff6b09703268, type: 3}
+      propertyPath: nextSceneIndex
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8177730764515840755, guid: 4d42364e028fad042a36ff6b09703268, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
