@@ -728,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388163088322792752, guid: c6fb802207e45a64bb89716556852d8d, type: 3}
       propertyPath: conversation
-      value: Intro/Intro Convo
+      value: Debug Convo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6fb802207e45a64bb89716556852d8d, type: 3}
