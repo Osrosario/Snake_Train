@@ -9,6 +9,12 @@ public class GatlingStateManager : MonoBehaviour
     [SerializeField] private float detectionRadius;
     [SerializeField] private float rotationSpeed;
 
+    //added by Callandra
+    [SerializeField] public bool badgerBoss;
+    [SerializeField] GameObject flipPoint;
+    [SerializeField] GameObject returnPoint;
+    [SerializeField] Animator badgerGunAnimator;
+
     /* Agent Data */
     private Transform enemySpriteTransform;
     private float xEnemyScale;
@@ -135,18 +141,37 @@ public class GatlingStateManager : MonoBehaviour
 
         if (directionToTarget.x < 0)
         {
+            
             enemySpriteTransform.localScale = new Vector3(-xEnemyScale, enemySpriteTransform.localScale.y, enemySpriteTransform.localScale.z);
-            gatlingTransform.localScale = new Vector3(gatlingTransform.localScale.x, -yGatlingScale, gatlingTransform.localScale.z);
-        }
-        else
-        {
-            enemySpriteTransform.localScale = new Vector3(xEnemyScale, enemySpriteTransform.localScale.y, enemySpriteTransform.localScale.z);
-            gatlingTransform.localScale = new Vector3(gatlingTransform.localScale.x, yGatlingScale, gatlingTransform.localScale.z);
-        }
-    }
 
-    /* Debug for visibility */
-    private void OnDrawGizmos()
+            /**<<<<<<< Updated upstream
+                        gatlingTransform.localScale = new Vector3(gatlingTransform.localScale.x, -yGatlingScale, gatlingTransform.localScale.z);
+=======
+            **/
+                        gatlingTransform.localScale = new Vector3(gatlingTransform.localScale.x, -yGatlingScale , gatlingTransform.localScale.z);
+
+
+                        //added by Callandra
+                        if (badgerBoss)
+                        {
+                            gatlingTransform.position = flipPoint.transform.position;
+                        }
+                    }
+                    else
+                    {
+                        enemySpriteTransform.localScale = new Vector3(xEnemyScale, enemySpriteTransform.localScale.y, enemySpriteTransform.localScale.z);
+                        gatlingTransform.localScale = new Vector3(gatlingTransform.localScale.x, yGatlingScale, gatlingTransform.localScale.z);
+
+                        //added by Callandra
+                        if (badgerBoss)
+                        {
+                            gatlingTransform.position = returnPoint.transform.position;
+                        }
+                    }
+                }
+
+                /* Debug for visibility */
+            private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(gatlingTransform.position, detectionRadius);
@@ -211,6 +236,12 @@ public class GatlingStateManager : MonoBehaviour
                     projectile.SetActive(true);
                     drumCapacity--;
                     StartCoroutine(FireTimer());
+
+                    //added by Callandra
+                    if (badgerBoss)
+                    {
+                        badgerGunAnimator.SetBool("Firing", true);
+                    }
                 }
                 else
                 {

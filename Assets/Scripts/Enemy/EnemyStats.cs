@@ -31,9 +31,9 @@ public class EnemyStats : MonoBehaviour, IDamageable
     private void Awake()
     {
         health = enemyData.MaxHealth;
-        enemyHealthBarObj = transform.Find("Canvas/HealthBarEnemy").gameObject;
+        //enemyHealthBarObj = transform.Find("Canvas/HealthBarEnemy").gameObject;
         //enemyHealthBar = enemyHealthBarObj.GetComponent<WorldSpaceHealthBar>();
-        enemyHealthBarObj.SetActive(false);
+        //enemyHealthBarObj.SetActive(false);
         textOriginTransform = transform.Find("FloatingTextOrigin").GetComponent<Transform>();
         enemySprend = transform.Find("SpriteEnemy").GetComponent<SpriteRenderer>();
         orignalColor = enemySprend.color;
@@ -61,7 +61,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
         /* Sets the enemy health bar to active once it recieves damage. */
         if (health != enemyData.MaxHealth)
         {
-            enemyHealthBarObj.SetActive(true);
+            //enemyHealthBarObj.SetActive(true);
             CombatStateManager.current.SetState(CombatStateManager.SceneState.Hostile);
         }
 
