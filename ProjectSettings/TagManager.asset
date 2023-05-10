@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - Breakable
   - Environment
+  - Damager
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Damageable
-  - 
+  - Obstacle
   - 
   - 
   - 

@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Camera sceneCamera;
 
     /* Core Player Data */
+    private PlayerStats playerStats;
     private Rigidbody2D playerRigidBody;
     private Transform playerSpriteTransform;
     private int sceneState;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     /* Finds the child with the specified name of the object this script is attached to. */
     private void Awake()
     {
+        playerStats = gameObject.GetComponent<PlayerStats>();
         playerRigidBody = gameObject.GetComponent<Rigidbody2D>();
         playerSpriteTransform = transform.Find("SpritePlayer").GetComponent<Transform>();
         weaponTransform = transform.Find("Revolver (Pivot)").GetComponent<Transform>();
@@ -128,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if (!isDashing)
                 {
-                    playerRigidBody.velocity = movement.normalized * (speed * 100) * Time.deltaTime;
+                    playerRigidBody.velocity = movement.normalized * (playerData.MoveSpeed * 100) * Time.deltaTime;
                 }
 
                 break;
@@ -165,9 +167,11 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
         dashSound.Play();
+        playerStats.IsDamageable = false;
         playerRigidBody.AddForce(direction.normalized * playerData.DashForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
+        playerStats.IsDamageable = true;
         yield return new WaitForSeconds(playerData.DashCooldown);
         canDash = true;
     }

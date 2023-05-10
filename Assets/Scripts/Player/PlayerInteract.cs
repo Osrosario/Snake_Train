@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    [Header("Prompt Object")]
-    [SerializeField] private GameObject _promptObj;
-
     public static Action<GameObject> OnInteraction;
 
+    private GameObject _promptObj;
     private Animator promptAnimator;
     private TransitionController _controller;
     private bool canInteract;
 
     private void Awake()
     {
+        _promptObj = transform.Find("Prompt").gameObject;
         promptAnimator = _promptObj.GetComponent<Animator>();
     }
 

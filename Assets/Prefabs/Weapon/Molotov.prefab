@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7525842663699405189}
   m_Layer: 0
   m_Name: Molotov
-  m_TagString: Untagged
+  m_TagString: Damager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   molotavData: {fileID: 11400000, guid: ceb352b8aad0652478c1c3e2e0e01e5c, type: 2}
   damagableLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &3664822844665132822
 GameObject:
   m_ObjectHideFlags: 0

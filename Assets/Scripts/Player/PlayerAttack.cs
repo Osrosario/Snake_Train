@@ -8,12 +8,26 @@ public class PlayerAttack : MonoBehaviour
 {
     [Header("Weapon Data")]
     [SerializeField] private GunData revolverData;
-    [SerializeField] private Transform leftFirePoint;
-    [SerializeField] private Transform rightFirePoint;
+
+    /* Weapon Data */
+    private Transform leftFirePoint;
+    private Transform rightFirePoint;
+    private Animator leftWeaponAnimator;
+    private Animator rightWeaponAnimator;
+    private AudioSource weaponSFX;
 
     private int sceneState;
     private bool canFire = true;
     private bool fireFromLeft = true;
+
+    private void Awake()
+    {
+        leftFirePoint = transform.Find("Revolver (Pivot)/FirePointLeft").GetComponent<Transform>();
+        rightFirePoint = transform.Find("Revolver (Pivot)/FirePointRight").GetComponent<Transform>();
+        leftWeaponAnimator = transform.Find("Revolver (Pivot)/WeaponLeft").GetComponent<Animator>();
+        rightWeaponAnimator = transform.Find("Revolver (Pivot)/WeaponRight").GetComponent<Animator>();
+        weaponSFX = transform.Find("Revolver (Pivot)").GetComponent<AudioSource>();
+    }
 
     /*
      * Subscribes to the SendSceneState event in the CombatStateManager script.
@@ -54,25 +68,28 @@ public class PlayerAttack : MonoBehaviour
     {
         if (canFire)
         {
-            GameObject projectile = BulletPooler.current.GetPooledObject();
+            GameObject projectile = ObjectPooler.current.GetPooledObject<Bullet>();
 
             if (projectile != null)
             {
                 if (fireFromLeft)
                 {
+                    leftWeaponAnimator.Play("r_Shot");
                     projectile.transform.position = leftFirePoint.transform.position;
                     projectile.transform.rotation = leftFirePoint.transform.rotation;
                 }
                 else
                 {
+                    rightWeaponAnimator.Play("f_Shot");
                     projectile.transform.position = rightFirePoint.transform.position;
                     projectile.transform.rotation = rightFirePoint.transform.rotation;
                 }
 
-                projectile.GetComponent<BulletController>().FireForce = revolverData.FireForce;
+                projectile.GetComponent<Bullet>().FireForce = revolverData.FireForce;
                 int randomDamage = Mathf.FloorToInt(Random.Range(revolverData.MinDamage, revolverData.MaxDamage));
-                projectile.GetComponent<BulletController>().BulletDamage = randomDamage;
+                projectile.GetComponent<Bullet>().BulletDamage = randomDamage;
                 projectile.SetActive(true);
+                weaponSFX.PlayOneShot(revolverData.SFX);
                 StartCoroutine(FireTimer());
             }
             else

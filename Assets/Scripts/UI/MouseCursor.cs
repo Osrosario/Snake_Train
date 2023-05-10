@@ -11,8 +11,9 @@ public class MouseCursor : MonoBehaviour
 
     private void Start()
     {
-        /* Makes the system mouse cursor invisible when game is playing. */
+        /* Makes the system mouse cursor invisible and confined within the screen when game is playing. */
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void Update()

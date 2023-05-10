@@ -55,10 +55,12 @@ public class CombatStateManager : MonoBehaviour
     /*
      * Combat Finite State Machine.
      * Calls all functions subscribed to this event.
-     * Subscription: TransitionController, TransitionPrompter, GatlingStateManager, PlayerMovement, PlayerAttack.
+     * Subscription: TransitionController, TransitionPrompter, GatlingStateManager, StalkerStateManager, PlayerMovement, PlayerAttack.
      */
-    private void Update()
+    public void SetState(SceneState state)
     {
+        _currentSceneState = state;
+
         switch (_currentSceneState)
         {
             case SceneState.Friendly:
@@ -85,12 +87,6 @@ public class CombatStateManager : MonoBehaviour
                 SendSceneState?.Invoke(4);
                 break;
         }
-    }
-
-    /* Changes Scene State. */
-    public void SetState(SceneState state)
-    {
-        _currentSceneState = state;
     }
 
     private void IncreaseEnemyCount() 

@@ -6,9 +6,10 @@ using UnityEngine;
 public class AgentData : ScriptableObject
 {
     public float MaxHealth;
-    public float Attack;
     [Header("Mutiplied by 100")]
     public float MoveSpeed;
     public float DashForce;
     public float DashCooldown;
+    [Header("Melee Agents Only")]
+    public float Attack;
 }

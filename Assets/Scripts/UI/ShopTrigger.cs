@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class ShopTrigger : MonoBehaviour
 {
-    /**
-     * This script controlls a box that on trigger prompts the player to open the shop screen. 
-     * **/
-
+    /* This script controlls a box that on trigger prompts the player to open the shop screen. */
     [SerializeField] private GameObject shopScreen;
     [SerializeField] private GameObject shopPrompt;
     [SerializeField] public bool on;
@@ -28,7 +25,6 @@ public class ShopTrigger : MonoBehaviour
     void Start()
     {
         on = false;
-
     }
 
     public void Clear()
