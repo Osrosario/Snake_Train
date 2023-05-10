@@ -6,11 +6,16 @@ using TMPro;
 
 public class ShopController : MonoBehaviour
 {
+
+    // referenced code from https://answers.unity.com/questions/260100/instantiate-as-a-child-of-the-parent.html
+
     [SerializeField] Button restoreButton;
     [SerializeField] Button increaseButton;
 
-    [SerializeField] GameObject[] lifeSprites;
+    [SerializeField] GameObject barDivHolder;
     [SerializeField] TextMeshProUGUI moneyDisplay;
+    [SerializeField] GameObject healthDiv;
+    
 
     public PlayerInventory inv;
     public PlayerStats stats;
@@ -56,6 +61,8 @@ public class ShopController : MonoBehaviour
         //inv.Coins -= 30;
         inv.SubtractCoins(30);
         stats.IncreaseMaxHealth(25);
+        GameObject created = Instantiate(healthDiv);
+        created.transform.parent = barDivHolder.transform;
         UpdateMenu();
     }
 
