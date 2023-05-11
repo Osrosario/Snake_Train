@@ -65,6 +65,7 @@ public class ModifiedStalkerStateManager : MonoBehaviour
     {
         CombatStateManager.SendSceneState += SceneState;
         //PlayerStats.OnDeathPlayer -= PlayerDead;
+        CancelInvoke();
     }
 
     private void Awake()
