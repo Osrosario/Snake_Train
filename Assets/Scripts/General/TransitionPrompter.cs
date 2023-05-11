@@ -36,9 +36,13 @@ public class TransitionPrompter : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerInteract player = collision.gameObject.GetComponent<PlayerInteract>();
-            player.PromptState = true;
-            player.Prompt(canOpen);
-            player.Controller = transitionController;
+            //edited by Callandra
+            if (player != null)
+            {
+                player.PromptState = true;
+                player.Prompt(canOpen);
+                player.Controller = transitionController;
+            }
         }
     }
 
@@ -48,8 +52,11 @@ public class TransitionPrompter : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerInteract player = collision.gameObject.GetComponent<PlayerInteract>();
-            player.PromptState = false;
-            player.Prompt(canOpen);
+            if (player != null)
+            {
+                player.PromptState = false;
+                player.Prompt(canOpen);
+            }
         }
     }
 

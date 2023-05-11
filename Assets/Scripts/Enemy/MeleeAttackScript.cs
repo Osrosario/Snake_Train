@@ -7,6 +7,11 @@ public class MeleeAttackScript : MonoBehaviour
     [SerializeField] EnemyStats stats;
 
     //This script is for an attack hitbox, dealing damage when triggered
+    private void Start()
+    {
+        stats = GetComponentInParent<EnemyStats>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

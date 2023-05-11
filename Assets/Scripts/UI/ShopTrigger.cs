@@ -27,12 +27,12 @@ public class ShopTrigger : MonoBehaviour
     {
         CombatStateManager.SendSceneState -= SceneState;
     }
-
+    /**
     private void Awake()
     {
         shopPrompt = transform.Find("Canvas/Prompt").gameObject;
         shopAlert = transform.Find("Canvas/alert").gameObject;
-    }
+    }**/
 
     // Start is called before the first frame update
     void Start()
