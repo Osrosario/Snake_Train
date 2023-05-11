@@ -1380,8 +1380,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopScreen: {fileID: 0}
-  shopPrompt: {fileID: 0}
-  shopAlert: {fileID: 0}
   on: 0
   hasOpened: 0
 --- !u!1001 &1381909516
@@ -1717,6 +1715,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1459890668758434736, guid: a2a98d781ae334f098f4d16b9bdae5cc, type: 3}
+      propertyPath: detectionRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7415410187757663285, guid: a2a98d781ae334f098f4d16b9bdae5cc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3249,7 +3251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5346721361378706777, guid: 4d42364e028fad042a36ff6b09703268, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.49
+      value: 10.71
       objectReference: {fileID: 0}
     - target: {fileID: 5415863430259817161, guid: 4d42364e028fad042a36ff6b09703268, type: 3}
       propertyPath: m_Value

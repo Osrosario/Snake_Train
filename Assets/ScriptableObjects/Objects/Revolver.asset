@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Revolver
   m_EditorClassIdentifier: 
   SFX: {fileID: 8300000, guid: 4ee8c6b2ac8c9304d9d32c11a92cd6f6, type: 3}
-  MaxDamage: 200
+  MaxDamage: 50
   MinDamage: 15
   FireForce: 20
   FireRate: 0.7

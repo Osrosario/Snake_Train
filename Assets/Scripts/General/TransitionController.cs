@@ -115,7 +115,7 @@ public class TransitionController : MonoBehaviour
             doorTransform.position = Vector2.MoveTowards(doorTransform.position, doorOpenPosition, doorSpeed * Time.deltaTime);
             yield return null;
         }
-
+        Debug.Log("move player?");
         /* Move player to the other side. */
         while (plyrRigidBody.position != targetPosition)
         {
@@ -123,17 +123,20 @@ public class TransitionController : MonoBehaviour
             yield return null;
         }
 
+        Debug.Log("close door?");
         /* Close door. */
         while ((Vector2)doorTransform.position != doorClosedPosition)
         {
             doorTransform.position = Vector2.MoveTowards(doorTransform.position, doorClosedPosition, doorSpeed * Time.deltaTime);
             yield return null;
         }
+        Debug.Log("hit here!");
 
         /* Fade to black. Change Scene. */
         crossFadeAnimator.SetTrigger("FadeOut");
         yield return new WaitForSeconds(animationDuration);
         sceneData.SceneToLoad = nextSceneIndex;
-        SceneManager.LoadScene(0);
+        //edited by Callandra (from loadscene(0)
+        SceneManager.LoadScene(1);
     }
 }
