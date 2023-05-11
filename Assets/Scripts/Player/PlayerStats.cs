@@ -95,6 +95,12 @@ public class PlayerStats : MonoBehaviour, IDamageable
         return isFull;
     }
 
+    public float getMaxHealth()
+    {
+        return maxHealth;
+    }
+
+
     /* Getter/Setter */
     public bool IsDamageable
     {

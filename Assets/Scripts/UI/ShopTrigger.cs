@@ -66,6 +66,7 @@ public class ShopTrigger : MonoBehaviour
             shopScreen.GetComponent<ShopController>().restoreState = sceneState;
             shopScreen.GetComponent<ShopController>().UpdateMenu();
             on = false;
+            hasOpened = true;
             shopAlert.SetActive(false);
            
         }
