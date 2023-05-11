@@ -63,8 +63,10 @@ public class ModifiedStalkerStateManager : MonoBehaviour
     /* Unsubscribes from the OnDeathPlayer event in the PlayerStats script (if destroyed). */
     private void OnDisable()
     {
-        CombatStateManager.SendSceneState += SceneState;
+        CombatStateManager.SendSceneState -= SceneState;
         //PlayerStats.OnDeathPlayer -= PlayerDead;
+
+        CancelInvoke();
     }
 
     private void Awake()
@@ -218,12 +220,10 @@ public class ModifiedStalkerStateManager : MonoBehaviour
 
         if (direction.x < 0)
         {
-            Debug.Log("LEFT");
             enemySpriteTransform.localScale = new Vector3(-xEnemyScale, enemySpriteTransform.localScale.y, enemySpriteTransform.localScale.z);
         }
         else
         {
-            Debug.Log("RIGHT");
             enemySpriteTransform.localScale = new Vector3(xEnemyScale, enemySpriteTransform.localScale.y, enemySpriteTransform.localScale.z);
         }
 

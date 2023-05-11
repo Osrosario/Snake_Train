@@ -63,8 +63,10 @@ public class StalkerStateManager : MonoBehaviour
     /* Unsubscribes from the OnDeathPlayer event in the PlayerStats script (if destroyed). */
     private void OnDisable()
     {
-        CombatStateManager.SendSceneState += SceneState;
+        CombatStateManager.SendSceneState -= SceneState;
         //PlayerStats.OnDeathPlayer -= PlayerDead;
+
+        CancelInvoke();
     }
 
     private void Awake()

@@ -6,17 +6,21 @@ public class ShopTrigger : MonoBehaviour
 {
     /* This script controlls a box that on trigger prompts the player to open the shop screen. */
     [SerializeField] private GameObject shopScreen;
-    [SerializeField] private GameObject shopPrompt;
-    [SerializeField] private GameObject shopAlert;
+    private GameObject shopPrompt;
+    private GameObject shopAlert;
     [SerializeField] public bool on;
     [SerializeField] private bool hasOpened;
     private int sceneState;
 
+    private void Awake()
+    {
+        shopPrompt = GameObject.Find("Prompt").gameObject;
+        shopAlert = GameObject.Find("Canvas (1)/alert").gameObject;
+    }
+
     private void OnEnable()
     {
         CombatStateManager.SendSceneState += SceneState;
-
-
     }
 
     private void OnDisable()
