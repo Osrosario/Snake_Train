@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SwarmingSnake
   m_EditorClassIdentifier: 
   MaxHealth: 50
-  MoveSpeed: 0.01
+  MoveSpeed: 4
   DashForce: 0
   DashCooldown: 0
-  Attack: 0
+  Attack: 10

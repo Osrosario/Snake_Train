@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3678258944213170869}
   - component: {fileID: 3678258944213170874}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpriteEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3678258946119486957}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FloatingTextOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 3678258946148815128}
   - component: {fileID: 3678258946148815134}
   - component: {fileID: 3028125974566894399}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StaticBox
   m_TagString: Environment
   m_Icon: {fileID: 0}

@@ -27,6 +27,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
     private bool isTakingDamage = false;
     private float flickerTime = 0.05f;
     private Color orignalColor;
+
     
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class EnemyStats : MonoBehaviour, IDamageable
         textOriginTransform = transform.Find("FloatingTextOrigin").GetComponent<Transform>();
         enemySprend = transform.Find("SpriteEnemy").GetComponent<SpriteRenderer>();
         orignalColor = enemySprend.color;
+
     }
 
     private void Start()
@@ -116,5 +118,11 @@ public class EnemyStats : MonoBehaviour, IDamageable
         enemySprend.color = orignalColor;
 
         isTakingDamage = false;
+    }
+
+    //added by Callandra
+    public float meleeAttack()
+    {
+        return enemyData.Attack;
     }
 }

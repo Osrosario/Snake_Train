@@ -24,10 +24,10 @@ public class Breakable : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        healthBarObj = transform.Find("Canvas/HealthBar").gameObject;
-        healthBar = healthBarObj.GetComponent<WorldSpaceHealthBar>();
+        //healthBarObj = transform.Find("Canvas/HealthBar").gameObject;
+        //healthBar = healthBarObj.GetComponent<WorldSpaceHealthBar>();
 
-        healthBarObj.SetActive(false);
+        //healthBarObj.SetActive(false);
     }
 
     /* Switches when sound SFX when taking damage. Drops coins when destroyed. */
@@ -40,11 +40,11 @@ public class Breakable : MonoBehaviour, IDamageable
 
         if (health / 100 != 1)
         {
-            healthBarObj.SetActive(true);
+            //healthBarObj.SetActive(true);
         }
 
         float adjustedHealth = (health / 100);
-        healthBar.ShowDamage(adjustedHealth);
+        //healthBar.ShowDamage(adjustedHealth);
         switcher = !switcher;
 
         if (health <= 0)
