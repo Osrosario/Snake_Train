@@ -6,11 +6,11 @@ public class ShopTrigger : MonoBehaviour
 {
     /* This script controlls a box that on trigger prompts the player to open the shop screen. */
     [SerializeField] private GameObject shopScreen;
-    private GameObject shopPrompt;
-    private GameObject shopAlert;
     [SerializeField] public bool on;
     [SerializeField] private bool hasOpened;
     private int sceneState;
+    private GameObject shopPrompt;
+    private GameObject shopAlert;
 
     private void Awake()
     {
@@ -26,6 +26,12 @@ public class ShopTrigger : MonoBehaviour
     private void OnDisable()
     {
         CombatStateManager.SendSceneState -= SceneState;
+    }
+
+    private void Awake()
+    {
+        shopPrompt = transform.Find("Canvas/Prompt").gameObject;
+        shopAlert = transform.Find("Canvas/alert").gameObject;
     }
 
     // Start is called before the first frame update
