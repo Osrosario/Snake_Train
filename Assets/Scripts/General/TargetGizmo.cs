@@ -11,6 +11,7 @@ public class TargetGizmo : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+#if UNITY_EDITOR_WIN
         Handles.Label(
             new Vector3(
                 transform.position.x + textPosition.x,
@@ -20,5 +21,6 @@ public class TargetGizmo : MonoBehaviour
 
         Gizmos.color = gizmoColor;
         Gizmos.DrawSphere(transform.position, 0.5f);
+#endif
     }  
 }
