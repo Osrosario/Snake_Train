@@ -714,7 +714,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: eb27dbcaf17bc4f6ba38669f4e68cf53, type: 2}
   damageColor: {r: 0, g: 0, b: 0, a: 0}
   coinObject: {fileID: 7307438559108704558, guid: fd3cfc53c56ad4c30968485851aedfec, type: 3}
-  amountToDrop: 30
+  amountToDrop: 10
 --- !u!114 &8781327446293924079
 MonoBehaviour:
   m_ObjectHideFlags: 0
