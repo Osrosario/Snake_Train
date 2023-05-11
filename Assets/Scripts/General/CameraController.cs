@@ -18,13 +18,19 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector3 targetPosition = player.position + offset;
-
+        
         // Clamp the camera position within the specified bounds.
-        targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
-        targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
-        targetPosition.z = zPosition;
+        if (player != null)
+        {
+            Vector3 targetPosition = player.position + offset;
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * cameraSpeed);
+            targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
+            targetPosition.z = zPosition;
+
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * cameraSpeed);
+        }
+       
+        
     }
 }
