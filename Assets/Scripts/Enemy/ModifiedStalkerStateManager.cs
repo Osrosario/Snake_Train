@@ -324,7 +324,7 @@ public class ModifiedStalkerStateManager : MonoBehaviour
         {
             Vector2 bulletPos = bullet.GetComponent<Transform>().position;
             Vector2 direction = (bulletPos - (Vector2)transform.position).normalized;
-            Debug.Log(direction);
+            //Debug.Log(direction);
             StartCoroutine(Stun(direction));
         }
     }

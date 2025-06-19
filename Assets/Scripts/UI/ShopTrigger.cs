@@ -62,6 +62,7 @@ public class ShopTrigger : MonoBehaviour
         
         if(on == true && Input.GetKeyDown(KeyCode.F))
         {
+            //Debug.Log("Opened Shop!");
             shopScreen.SetActive(true);
             shopScreen.GetComponent<ShopController>().restoreState = sceneState;
             shopScreen.GetComponent<ShopController>().UpdateMenu();

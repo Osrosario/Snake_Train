@@ -1748,9 +1748,7 @@ MonoBehaviour:
   m_text: 'Resources:
 
 
-    [sound credits]
-
-    [dialogue system]'
+    Pixel Crushers Dialogue System for Unity'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4caad8d7d2c0c0438f536ee1397c38d, type: 2}
   m_sharedMaterial: {fileID: -7015146950637105205, guid: e4caad8d7d2c0c0438f536ee1397c38d, type: 2}

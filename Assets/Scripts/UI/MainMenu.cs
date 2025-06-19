@@ -11,7 +11,9 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        OpenMainMenu();
+        OpenMainMenu();       
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class MainMenu : MonoBehaviour
 
     public void ExitGame()
     {
-
+        Application.Quit();
     }
 
 

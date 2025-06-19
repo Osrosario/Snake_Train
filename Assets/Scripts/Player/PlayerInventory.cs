@@ -18,6 +18,7 @@ public class PlayerInventory : MonoBehaviour
     public void AddCoin()
     {
         playerInventory.Coins += 1;
+        Debug.Log("coin up: " + playerInventory.Coins);
     }
 
     public void SubtractCoins(int remove)

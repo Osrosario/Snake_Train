@@ -76,6 +76,11 @@ public class TransitionController : MonoBehaviour
             StartCoroutine(LoadScene(playerObject));
         }    
     }
+
+    public void OnTriggerEnter2D()
+    {
+        GameObject.Find("ShopTrigger").GetComponent<ShopTrigger>().on = false;
+    }
     
     /* 
      * Transition Animations
@@ -97,10 +102,12 @@ public class TransitionController : MonoBehaviour
         {
             targetPosition = new Vector2(transform.position.x + 2.5f, transform.position.y);
         }
-          
+
         playerObject.GetComponent<PlayerMovement>().CapturedDirection = exitDirection.ToString();
         playerObject.GetComponent<PlayerInteract>().Prompt(false);
         playerObject.GetComponent<PlayerInteract>().PromptState = false;
+        //playerObject.GetComponent<CapsuleCollider2D>().enabled = false;
+        GameObject.Find("Walls").gameObject.SetActive(false);
 
         /* Move player to Transition Controller position. */
         while (plyrRigidBody.position != (Vector2)transform.position)

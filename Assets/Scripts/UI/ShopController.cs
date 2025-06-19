@@ -78,17 +78,22 @@ public class ShopController : MonoBehaviour
         {
             CombatStateManager.current.SetState(CombatStateManager.SceneState.Neutral);
         }
-        Debug.Log("shop exit");
-        gameObject.SetActive(false);
+        //Debug.Log("shop exit");
+
+        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
         trig.on = true;
+        gameObject.SetActive(false);
     }
 
     //updates the shop menu
     public void UpdateMenu()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
 
         //Debug.Log(inv.Coins);
-        Debug.Log(inv.ReturnCoins());
+        //Debug.Log(inv.ReturnCoins());
         crossFade.SetActive(false);
         CombatStateManager.current.SetState(CombatStateManager.SceneState.Menu);
 
